@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View } from 'react-native';
-import { TasksContext } from '../../../Context';
+import { TasksContext, useTaskList } from '../../../Context';
 import { ItemCard } from '../../item-card';
 import { Input } from '../../Input';
 import { Touchable } from '../../TouchableOpacity';
@@ -9,7 +9,7 @@ import { TaskList } from '../../TaskList';
 export default function Home(): JSX.Element {
   const [newTask, setNewTask] = useState('');
 
-  const { addTask } = React.useContext(TasksContext);
+  const { addTask } = useTaskList();
 
   return (
   <SafeAreaView style={{ flex: 1, backgroundColor: '#121214' }}>
